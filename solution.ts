@@ -1,4 +1,4 @@
-// 1
+
 const formatValue = (
   value: string | number | boolean
 ): string | number | boolean => {
@@ -12,7 +12,7 @@ const formatValue = (
   return value;
 };
 
-// 2
+
 const getLength = (value: string | unknown[]): number => {
   if (typeof value === "string") {
     return value.length;
@@ -22,7 +22,7 @@ const getLength = (value: string | unknown[]): number => {
   return 0;
 };
 
-// 3
+
 class Person {
   name: string;
   age: number;
@@ -34,7 +34,7 @@ class Person {
   }
 }
 
-// 4
+
 
 type item = {
   title: string;
@@ -56,15 +56,9 @@ function filterByRating(input: item[]): item[] {
   }
   return moreThanFourRated;
 }
-const books = [
-  { title: 'Book A', rating: 4.5 },
-  { title: 'Book B', rating: 3.2 },
-  { title: 'Book C', rating: 5.0 },
-];
 
-console.log(filterByRating(books));
 
-// 5
+
 type user = {
   id: number;
   name: string;
@@ -83,7 +77,7 @@ function filterActiveUsers(input: user[]): user[] {
   return activatedArray;
 }
 
-// 6
+
 interface Book {
   title: string;
   author: string;
@@ -101,7 +95,7 @@ function printBookDetails(input: Book): void {
   );
 }
 
-// 7
+
 function getUniqueValues(
   arr1: (string | number)[],
   arr2: (string | number)[]
@@ -116,7 +110,7 @@ function getUniqueValues(
   return noDuplicate;
 }
 
-// 8
+
 type product = {
   name: string;
   price: number;
@@ -126,7 +120,7 @@ type product = {
 
 function calculateTotalPrice (input:product[]):number{
     const TotalPrice = input.reduce((Total,product)=>{
-        console.log(Total,product)
+      
         return (Total) + (product.price *product.quantity)*(1-(product.discount??0)/100)
     },0)
    return TotalPrice
