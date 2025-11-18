@@ -100,15 +100,35 @@ function getUniqueValues(
   arr1: (string | number)[],
   arr2: (string | number)[]
 ): (string | number)[] {
-  const oneArray = [...arr1, ...arr2];
+  
+  const oneArray: (string | number)[] = [];
   let noDuplicate: (string | number)[] = [];
-  for (let i = 0; i < oneArray.length; i++) {
-    if (!noDuplicate.includes(oneArray[i])) {
-      noDuplicate.push(oneArray[i]);
+
+  for(let i=0; i<arr1.length; i++){
+    oneArray[oneArray.length] = arr1[i]
+  }
+  for(let i=0; i<arr2.length; i++){
+    oneArray[oneArray.length] = arr2[i]
+  }
+  for (let i=0; i<oneArray.length; i++){
+    let found=false;
+    for(let j=0; j<noDuplicate.length; j++){
+      if(oneArray[i]===noDuplicate[j]){
+         found = true;
+        break;
+      }
     }
+    if(!found){
+      noDuplicate[noDuplicate.length] = oneArray[i]
+    }
+  
   }
   return noDuplicate;
 }
+
+const array1 = [1, 2, 3, 4, 5];
+const array2 = [3, 4, 5, 6, 7];
+console.log(getUniqueValues(array1, array2));
 
 
 type product = {
